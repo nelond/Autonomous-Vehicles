@@ -1,0 +1,2 @@
+BitBangI2Cv1.0
+-completley untested. Meant to be copy-pasted into 'output' tab of S-function builder. Needs: debugging, some way to control data collection. Maybe an ENABLE pin? while (enable) {take data}. Uses wiringPi and unistd.h libraries.
