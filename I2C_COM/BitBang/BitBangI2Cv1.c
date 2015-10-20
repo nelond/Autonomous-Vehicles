@@ -17,6 +17,14 @@
 	pinMode(8,INPUT);	
 	nanosleep(delay);
 	
+	while (enable == 1)
+	{	
+		sleep(1); //sleep 1 second
+		a = getData();//output an 8 bit integer value
+		//error message 1: error with connection
+		//error message 2: slave didn't ack, comm error
+	}
+	
 	a = getData();//output an 8 bit integer value
 	
 	
@@ -29,10 +37,10 @@
 	START();	            //start bit
 	WRITE(deviceADDR);		//write device address
 	if ( SMACK() == 1); 	//we want an ack
-		return 1; 			//error		
+		return 2; 			//error		
 	WRITE(regADDR);			//write register address
 	if ( SMACK() == 1); 	//we want an ack
-		return 1; 			//error
+		return 2; 			//error
 	firstByte = READ();		//read one byte
 	MasterACK(0);			//0 indicates ACK. We need 2 more bits
 	secondByte = READ();	//Ready last Byte
@@ -226,5 +234,4 @@
 	//END I2C device functions
 	//--------------------------------------------------------
 
-    //RegisterValue[0] = a;
     # endif

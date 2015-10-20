@@ -1,0 +1,41 @@
+Scratch Pad Area Registers
+
+    0x60-9B (RO) Read Scratch Pad Data (60 bytes)
+    0xA0-DB (WO) Write Scratch Pad Data (60 bytes) 
+
+
+Read Only (RO) & Write Only (WO) Register Descriptions
+
+    0x00-0x07 Version (ASCII Version #)
+    0x08-0x0F Vendor (ASCII Vendor "VEX")
+    0x10-0x18 Device ID (ASCII Device ID)
+    0x20 Read Device Information
+        0x20 is now an auto incrementing address
+        Byte0 Version #
+        Byte1 Type (1: IME)
+        Byte2 Board Id (2: Small IME, 3: Large IME)
+        Byte3 Device Status
+        Bit 0 Termination (0:Not Terminated, 1:Terminated)
+        Bit 1 Overflow (0:No Overflow, 1:Overflow Occurred)
+        Bit 2 Diagnostic Mode (0:off, 1:on)
+        Bit 3-4 Direction (0=Idle, 1=CW, 2=CCW)
+        Bits 5-7 N/A
+    0x3E-0x3F Read Signed Velocity (16bits)
+        Byte0 Velocity bits 15-08 (Msb)
+        Byte1 Velocity bits 07-00 (Lsb) 
+    0x40-0x43 Read Rotation Bits 48bits (0xXXFFFF)
+        Byte0 Rotation tics bits 15-08 (Msb)
+        Byte1 Rotation tics bits 07-00 (Lsb)
+        Byte2 Rotation tics bits 31-24 (Msb)
+        Byte3 Rotation tics bits 23-16 (Lsb) 
+    0x44-0x45 Read Unsigned Velocity (16bits)
+        Byte0 Velocity bits 15-08 (Msb)
+        Byte1 Velocity bits 07-00 (Lsb) 
+    0x46-0x47 Read Upper Rotation Bits (0xFFXXXX)
+        Byte0 Rotation tics bits 47-40 (Msb)
+        Byte1 Rotation tics bits 39-32 (Lsb) 
+    0x4A (WO) Clear Device Counters
+    0x4B (WO) Disable Terminator (so next device on chain can be seen)
+    0x4C (WO) Enable Terminator (Default, device is last in chain)
+    0x4D (WO) Change device address
+        Byte0 New address (Range from 0x20 – 0x5E) *** Note: if the device is reset it will revert to factor default address.
