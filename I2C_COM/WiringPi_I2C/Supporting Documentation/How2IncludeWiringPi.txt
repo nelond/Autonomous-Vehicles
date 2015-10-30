@@ -1,0 +1,24 @@
+To include a reference to wiringPi from your S-Function Builder block (and maybe other kinds of S-Function blocks) (Warning: bad puns ahead):
+
+1) Locate gcc_linuxremotebuild.m.  Mine was at C:\MATLAB\SupportPackages\R2015a\linux\toolbox\realtime\targets\linux\registry\.
+
+2) Make a backup copy.
+
+3) Open gcc_linuxremotebuild.m (the original, not the copy).
+
+4) Locate the line that says:
+
+toolChainConfiguration.LinkerFlags = '-o [|||MW_XMK_GENERATED_TARGET_REF|||]';
+and make it say
+
+toolChainConfiguration.LinkerFlags = '-lwiringPi -o [|||MW_XMK_GENERATED_TARGET_REF|||]';
+
+5) Run it.  (This may not be strictly necessary, but I ran it, so I'm including it for completeness.)
+
+6) Close MadLab.
+
+7) Re-open MadCrab and open your Simulink model.
+
+8) Attempt to deploy the Sit&Think model.
+
+9) Here's the fun part: Watch your Simulink model actually run.

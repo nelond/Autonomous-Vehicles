@@ -1,7 +1,8 @@
 Scratch Pad Area Registers
 
-    0x60-9B (RO) Read Scratch Pad Data (60 bytes)
-    0xA0-DB (WO) Write Scratch Pad Data (60 bytes) 
+
+ 0x60-9B (RO) Read Scratch Pad Data (60 bytes)
+ 0xA0-DB (WO) Write Scratch Pad Data (60 bytes) 
 
 
 Read Only (RO) & Write Only (WO) Register Descriptions
