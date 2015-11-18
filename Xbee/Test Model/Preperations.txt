@@ -1,0 +1,49 @@
+Download FTDI virtual com port drivers
+http://www.ftdichip.com/Drivers/VCP.htm
+Download utility for Xbee
+http://www.digi.com/support/productdetail?pid=3352&type=utilities
+Download serial port monitoring program
+http://realterm.sourceforge.net/
+
+
+connect Xbee usb module to your pc
+use device manager to find out which COM number it is (mine is COM5)
+This will only work if you have the FTDI drivers installed!!
+connect NXTbee to your Lego NXT. Make sure it is turned on and you will see the blue LED turn on
+In this example the LegoNXT is just a big battery for the NXTbee
+
+Before we simulink, lets make sure the Xbee's work with realterm.
+Open realterm. Open COM# (use device manager to determine which COM# Xbee is in)
+Configure the settings for COM# under the 'port' tab
+*see RealTerm_Config.png *
+8 bits
+no parity
+1 stop bit
+9600 baud rate
+little Endian
+no terminators or headers
+Configure display under 'display' tab
+select the HEX bubble
+You are connected and configured! Now to send data to Xbee
+Go to 'send' tab and copy paste this into the text field
+0x7E 0x00 0x04 0x08 0x01 0x4E 0x44 0x64
+This command tells the Xbee to ping all other Xbee's in range. Other Xbee's return
+with the first half of their MAC address.
+Hit 'Send Numbers'
+RealTerm will display data read from the Xbee.
+*see RealTerm_Send.png *
+
+If this was a success, open NXTbee.slx
+
+The only change to the model you need to make is the COM# in the Serial Configure block
+All other parameters are set correctly
+The CMD feeding into the Serial Send block is the same as what we used for RealTerm
+I used init8 units to convert int to hex (because Simulink doesnt support 0xFF)
+[126 0 4 8 1 78 68 100 ]
+
+Hit simulte and watch the display connected to Serial Recieve update with data.
+
+
+
+Follow this tutorial to make sure your Xbee's are working
+http://www.digi.com/blog/community/xbee-broadcast-tech-tip-using-remote-at-commands-to-toggle-an-io/
