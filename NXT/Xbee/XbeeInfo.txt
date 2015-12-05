@@ -1,0 +1,12 @@
+Go here for more advanced info on Xbee API frames (the big hex thing)
+http://www.millionbitz.com/2014/03/xbee-api-frame-data-transmit.html
+NXTbee MAC: 0013A200407BE877
+Computer Xbee MAC: 0013A200407BE765
+Go to the XCTU frame builder and save yourself the headache!!
+
+Example Frames:
+7E 00 10 00 10 00 13 A2 00 40 7B E8 77 00 48 65 6C 6C 6F 2C
+0x7E 0x00 0x10 0x00 0x10 0x00 0x13 0xA2 0x00 0x40 0x7B 0xE8 0x77 0x00 0x48 0x65 0x6C 0x6C 0x6F 0x2C
+hello
+7E 00 10 00 10 00 13 A2 00 40 7B E8 77 00 4E 49 4B 49 21 D4
+niki!

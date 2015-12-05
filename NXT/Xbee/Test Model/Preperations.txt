@@ -1,7 +1,10 @@
+*you need the FTDI drivers
 Download FTDI virtual com port drivers
 http://www.ftdichip.com/Drivers/VCP.htm
+**you can skip this if you want
 Download utility for Xbee
 http://www.digi.com/support/productdetail?pid=3352&type=utilities
+*you need realterm tho
 Download serial port monitoring program
 http://realterm.sourceforge.net/
 
@@ -32,6 +35,7 @@ with the first half of their MAC address.
 Hit 'Send Numbers'
 RealTerm will display data read from the Xbee.
 *see RealTerm_Send.png *
+
 
 If this was a success, open NXTbee.slx
 

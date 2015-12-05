@@ -1,0 +1,25 @@
+SYMPTOMS!
+1) NXT brick is clicking and unresponsive
+2) RobotC and Mindstorm software can't locate NXT
+3) Device Manager labes the NXT as a 'Bossa' device
+
+What's the diagnoses?
+Your NXT is fine but your compy thinks the NXT is an arduino device. NXT and a certain Arduino
+device have the same processor so when the NXT is in 'boot mode' your compy decides to label
+it as an Arduino.
+
+What's the cure?
+Force your compy to accept the NXT as the NXT it really is.
+
+1) Disconnect your compy from the internet 
+2) Make sure NXT is still connected and turned on to compy
+2) Open device manager and uninstall the device listed as 'Bossa port'
+2) Find the oem files that identify NXT as arduino
+	1. Make sure the NXT brick is still connected to the computer.
+	2. Open an elevated CMD.
+	3. Type "cd c:\Windows\inf"
+	4. Type "findstr Bossa *.inf"
+	5. Note the INF file name in the form of oemxx.inf
+	6. Go to C:\Windows\INF and find the oemxx.inf files
+	7. Cut it and paste to a secure location
+3) Download firmware to the NXT
