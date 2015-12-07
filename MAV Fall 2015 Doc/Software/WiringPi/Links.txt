@@ -1,0 +1,8 @@
+Install WiringPi on your Raspberry Pi
+http://wiringpi.com/download-and-install/
+
+Pinout
+https://projects.drogon.net/raspberry-pi/wiringpi/pins/
+
+Function Library
+http://wiringpi.com/reference/i2c-library/

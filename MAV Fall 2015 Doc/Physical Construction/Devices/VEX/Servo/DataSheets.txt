@@ -1,0 +1,2 @@
+http://www.vexrobotics.com/wiki/3-Wire_Servo
+http://learn.cs2n.org/solt/lessons/cvt/content/reference/hp_servo.pdf

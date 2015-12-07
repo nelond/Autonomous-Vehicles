@@ -1,0 +1,2 @@
+http://www.vexrobotics.com/wiki/Intergrated_Motor_Encoders
+http://content.vexrobotics.com/docs/inventors-guide/276-1321-INST-0112.pdf

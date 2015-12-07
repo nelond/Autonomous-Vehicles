@@ -1,0 +1,5 @@
+http://www.monoprice.com/product?p_id=8072
+
+http://elinux.org/RPi_VerifiedPeripherals
+
+You will have to understand networking
